@@ -1,0 +1,65 @@
+package main.arreglosjava;
+
+import java.util.Scanner;
+
+/**
+ * Proyecto: Operaciones Básicas con Arreglos en Java
+ * Autor: Luis Angel Castro Edison
+ * Materia: Programación
+ */
+public class ArreglosJava {
+
+    public static void main(String[] args) {
+        Scanner teclado = new Scanner(System.in);
+        int[] arreglo1 = new int[5];
+        int[] arreglo2 = new int[5];
+        int[] suma = new int[5];
+        int[] resta = new int[5];
+        int[] multiplicacion = new int[5];
+
+        System.out.println("1ER ARREGLO");
+        for (int i = 0; i < arreglo1.length; i++) {
+            System.out.println("Ingresa el valor [" + i + "]");
+            arreglo1[i] = teclado.nextInt();
+        }
+
+        System.out.println("2o ARREGLO");
+        for (int i = 0; i < arreglo2.length; i++) {
+            System.out.println("Ingresa el valor [" + i + "] ");
+            arreglo2[i] = teclado.nextInt();
+        }
+
+        // Operaciones entre arreglos
+        for (int i = 0; i < arreglo1.length; i++) {
+            suma[i] = arreglo1[i] + arreglo2[i];
+            resta[i] = arreglo1[i] - arreglo2[i];
+            multiplicacion[i] = arreglo1[i] * arreglo2[i];
+        }
+
+        // Muestra de resultados en consola
+        System.out.println("RESULTADOS GENERALES"); 
+        System.out.println("\n Primer Arreglo:");
+        mostrarArreglo(arreglo1);
+
+        System.out.println("\n Segundo Arreglo:");
+        mostrarArreglo(arreglo2);
+
+        System.out.println("\n Suma Arreglo:");
+        mostrarArreglo(suma);
+
+        System.out.println("\n Resta Arreglo:");
+        mostrarArreglo(resta);
+
+        System.out.println("\n Multiplicación Arreglo:");
+        mostrarArreglo(multiplicacion);
+
+        teclado.close();
+    }
+ 
+    public static void mostrarArreglo(int[] arreglo) {
+        for (int i = 0; i < arreglo.length; i++) {
+            System.out.println(arreglo[i] + "");
+        }
+        System.out.println();
+    }
+}
